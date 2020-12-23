@@ -32,6 +32,13 @@ function App() {
           });
         })
         .catch((err) => console.log(err));
+
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
+      });
     }
   }, []);
 
